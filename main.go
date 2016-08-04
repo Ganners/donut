@@ -9,6 +9,8 @@ import (
 	"os"
 )
 
+// Simple example program which generates a blue donut chart with a percentage
+// passed in from the cli
 func main() {
 	fontFile := "/src/github.com/golang/freetype/testdata/luxisr.ttf"
 	fontFile = os.Getenv("GOPATH") + fontFile

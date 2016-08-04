@@ -10,6 +10,8 @@ import (
 	"golang.org/x/image/math/fixed"
 )
 
+// Donut contains the method for which to produce an image, it is configurable
+// in angle, size, colors and font.
 type Donut struct {
 	angle      float64
 	size       int
@@ -21,6 +23,7 @@ type Donut struct {
 	fontSize   int
 }
 
+// Constructs a new donut chart generator
 func NewDonut(
 	angle float64,
 	size int,
@@ -40,6 +43,11 @@ func NewDonut(
 	}
 }
 
+// Renders and returns the image as an image.RGBA
+//
+// Currently the 'donut' circle is cut out by just drawing a background colored
+// circle in the middle, it could be a seperate image mask or the circle sector
+// could exclude an inner circle
 func (d *Donut) Draw() *image.RGBA {
 
 	rgba := image.NewRGBA(image.Rect(0, 0, d.size, d.size))

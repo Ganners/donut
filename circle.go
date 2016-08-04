@@ -6,6 +6,7 @@ import (
 	"math"
 )
 
+// Builds a circle up to a given arctan
 type arcSector struct {
 	p     image.Point
 	r     int
